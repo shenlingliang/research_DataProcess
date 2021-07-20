@@ -28,12 +28,11 @@ for b in values:
                 tmp=file.readline().split("\t")
                 R[j]=R[j]+int(tmp[2])
                 D[j]=D[j]+int(tmp[2])**2
-        # 画图
         for i in range(101):
-            R[i]=R[i]/1000
+            R[i]=R[i]/1000# 求平均
             D[i]=D[i]/1000
             D[i]=math.sqrt(D[i]-R[i]**2)/R[i]
-            R[i]=R[i]/5000
+            R[i]=R[i]/5000# 归一化
         l1,=axe[0].plot(x,R,markerLst_R[pos])
         axe[0].set_xlabel("infectRate")
         axe[0].set_ylabel("R")
