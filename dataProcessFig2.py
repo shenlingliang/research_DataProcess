@@ -30,7 +30,7 @@ for pos,i in enumerate(values):
             R[z]=R[z]/5000
         l1,=axe.plot(x,R,marker[j])
         axe.set_xlabel("alpha")
-        axe.set_ylabel("R<∞>")
+        axe.set_ylabel("R(∞)")
         lineLst.append(l1)
     axe.legend(handles=[lineLst[0], lineLst[1], lineLst[2],lineLst[3]], labels=["lambda="+str((nums[0]+adder[pos])/100), "lambda="+str((nums[1]+adder[pos])/100), "lambda="+str((nums[2]+adder[pos])/100),"lambda="+str((nums[3]+adder[pos])/100)],loc='best')
     plt.show()
