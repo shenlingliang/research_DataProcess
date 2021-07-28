@@ -9,7 +9,7 @@ nums=["030","060","090"]
 marker=['r^--', 'bs-', 'go:']
 x=[i/100 for i in range(101)]
 for p,i in enumerate(values):
-    figTitle="alpha&beta="+str(poss[p])
+    figTitle="α="+str(poss[p])+" beta="+str(poss[p])
     fig,axe=plt.subplots(1,1,figsize=(10,10))
     axe.set_title(figTitle)
     lineLst=[]
@@ -28,8 +28,8 @@ for p,i in enumerate(values):
         for z in range(101):
             R[z]/=5000
         l1,=axe.plot(x,R,marker[pos])
-        axe.set_xlabel("threshold")
+        axe.set_xlabel("f")
         axe.set_ylabel("R(∞)")
         lineLst.append(l1)
-    axe.legend(handles=[lineLst[0], lineLst[1], lineLst[2]], labels=["lambda="+str(0.3), "lambda="+str(0.6), "lambda="+str(0.9)],loc='best')
+    axe.legend(handles=[lineLst[0], lineLst[1], lineLst[2]], labels=["λ="+str(0.3), "λ="+str(0.6), "λ="+str(0.9)],loc='best')
     plt.show()

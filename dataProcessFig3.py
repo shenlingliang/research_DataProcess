@@ -5,12 +5,13 @@ import math
 
 
 values=["002","005","010"]
+tmps=[0.02,0.05,0.10]
 nums=[20,25,30,35]
 marker=['r^--', 'bs-', 'go:','k+-.']
 adder=[0,5,20]
 x=[(i-10)/10 for i in range(21)]
 for pos,i in enumerate(values):
-    figTitle="f_"+i
+    figTitle="f="+str(tmps[pos])
     fig,axe=plt.subplots(1,1,figsize=(10,10))
     axe.set_title(figTitle)
     lineLst=[]
@@ -29,10 +30,10 @@ for pos,i in enumerate(values):
         for z in range(21):
             R[z]=R[z]/5000
         l1,=axe.plot(x,R,marker[j])
-        axe.set_xlabel("beta")
+        axe.set_xlabel("β")
         axe.set_ylabel("R(∞)")
         lineLst.append(l1)
-    axe.legend(handles=[lineLst[0], lineLst[1], lineLst[2],lineLst[3]], labels=["lambda="+str((nums[0]+adder[pos])/100), "lambda="+str((nums[1]+adder[pos])/100), "lambda="+str((nums[2]+adder[pos])/100),"lambda="+str((nums[3]+adder[pos])/100)],loc='best')
+    axe.legend(handles=[lineLst[0], lineLst[1], lineLst[2],lineLst[3]], labels=["λ="+str((nums[0]+adder[pos])/100), "λ="+str((nums[1]+adder[pos])/100), "λ="+str((nums[2]+adder[pos])/100),"λ="+str((nums[3]+adder[pos])/100)],loc='best')
     plt.show()
 
         
